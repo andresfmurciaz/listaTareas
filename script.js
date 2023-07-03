@@ -1,3 +1,5 @@
+
+(()=>{
 // capturo elemento por medio del DOM
 const btnAdd = document.querySelector("[data-btn-add]");
 
@@ -54,8 +56,11 @@ const createTask =(evento) =>
     {
         console.log(event.target )
         const elemento= event.target;
-// si eexiste la clase la elimino si no la dejo
+        // si eexiste la clase la elimino si no la dejo
         elemento.classList.toggle("fas");
         elemento.classList.toggle("completeIcon");
         elemento.classList.toggle("far");
         }
+
+
+ })
