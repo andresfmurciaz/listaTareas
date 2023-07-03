@@ -9,35 +9,46 @@ const createTask =(evento) =>
         const input = document.querySelector("[data-form-input]");
         const list = document.querySelector("[data-list]");
         const value = input.value;
-        input.value="";
+     
 
         // creamos un elemento li para ahcerlo dinamico y no estatico
         const task= document.createElement("li");
-        const taskContent = document.createElement("div");
-        
-        // le agrabamos a ese elemento li su clase card para que coja los css
         task.classList.add("card");
-        
-        taskContent.appendChild(checkComplete());
-        
-        const content = `    
-                <span class="task">${value}</span>
-                <i class="fas fa-trash-alt trashIcon icon"></i>`
-        task.appendChild(taskContent);
-        // agregamos a ese elemento list el codigo task como hijo
-        list.appendChild(task);
+        input.value="";
 
+
+        const taskContent = document.createElement("div");
+
+        const titleTask = document.createElement("span");
+        titleTask.classList.add("task");
+        titleTask.innerText = value;
+
+        // le agrabamos a ese elemento li su clase card para que coja los css
+        taskContent.appendChild(checkComplete());
+        taskContent.appendChild(titleTask);
+    
+
+      
+        
+        const content = `<i class="fas fa-trash-alt trashIcon icon"></i>`
+
+        // agregamos hijos
+  
+        task.appendChild(taskContent);
+        list.appendChild(task);
+        console.log(content);
     };
 
-// se cre un evento que escuche cuando el usuario de la click
-btnAdd.addEventListener('click', createTask);
- 
-const checkComplete = () => {
-    const i = document.createElement("i");
-    i.classList.add("far");
-    i.classList.add("fa-check-square");
-    i.classList.add("icon");
+    // se cre un evento que escuche cuando el usuario de la click
+    btnAdd.addEventListener('click', createTask);
+    
+    const checkComplete = () => 
+    {
+        const i = document.createElement("i");
+        i.classList.add("far");
+        i.classList.add("fa-check-square");
+        i.classList.add("icon");
 
-    return i;
+        return i;
 
     }
