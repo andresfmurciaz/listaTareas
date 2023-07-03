@@ -7,8 +7,12 @@ const createTask =(evento) =>
         evento.preventDefault();
          // capturamos el input y con value mostramos lo que tiene el input
         const input = document.querySelector("[data-form-input]");
-         // capturamos la card que muestra cada tarea
-        const task= document.querySelector("[data-task]")
+
+        const list = document.querySelector("[data-list]");
+         
+
+
+        const task= document.createElement("li");
         console.log(task)
         const value = input.value;
          //    nos limpia el value
@@ -25,6 +29,7 @@ const createTask =(evento) =>
 
         task.innerHTML=content;
 
+        list.appendChild(task)
     };
 
 // se cre un evento que escuche cuando el usuario de la click
