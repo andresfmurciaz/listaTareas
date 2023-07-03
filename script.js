@@ -7,6 +7,9 @@ const createTask =(evento) =>
         evento.preventDefault();
     // capturamos el input y con value mostramos lo que tiene el input
         const input = document.querySelector("[data-form-input]");
+// capturamos la card que muestra cada tarea
+        const task= document.querySelector("[data-task]")
+        console.log(task)
         const value = input.value;
     //    nos limpia el value
        input.value="";
