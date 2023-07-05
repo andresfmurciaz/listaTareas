@@ -11,7 +11,7 @@ const createTask =(evento) =>
         const input = document.querySelector("[data-form-input]");
         const list = document.querySelector("[data-list]");
         const value = input.value;
-     
+        
 
         // creamos un elemento li para ahcerlo dinamico y no estatico
         const task= document.createElement("li");
@@ -28,17 +28,11 @@ const createTask =(evento) =>
         // le agrabamos a ese elemento li su clase card para que coja los css
         taskContent.appendChild(checkComplete());
         taskContent.appendChild(titleTask);
-    
-
-      
-        
-        const content = `<i class="fas fa-trash-alt trashIcon icon"></i>`
-
-        // agregamos hijos
-  
+      //  taskContent.appendChild(deleteBtn());
         task.appendChild(taskContent);
+       task.appendChild(deleteBtn());
+        // agregamos hijos
         list.appendChild(task);
-        console.log(content);
     };
 
     // se cre un evento que escuche cuando el usuario de la click
@@ -60,7 +54,22 @@ const createTask =(evento) =>
         elemento.classList.toggle("fas");
         elemento.classList.toggle("completeIcon");
         elemento.classList.toggle("far");
-        }
+    }
 
+        
+    const deleteBtn = () =>
+    {
+        const i = document.createElement("i");
+        i.classList.add("fas","fa-trash-alt","trashIcon","icon");
+        i.addEventListener("click",deleteTask);
+        return i;
+    }
 
- })
+    const deleteTask = () => 
+    {
+
+    console.log("elinado")
+
+    }
+
+ })();
