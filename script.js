@@ -1,5 +1,7 @@
 
-(()=>{
+import checkComplete from "./components/checkComplete.js";
+import deleteBtn from "./components/deleteBtn.js";
+
 // capturo elemento por medio del DOM
 const btnAdd = document.querySelector("[data-btn-add]");
 
@@ -38,38 +40,6 @@ const createTask =(evento) =>
     // se cre un evento que escuche cuando el usuario de la click
     btnAdd.addEventListener('click', createTask);
     
-    const checkComplete = () => 
-    {
-        const i = document.createElement("i");
-        i.classList.add("far","fa-check-square","icon");
-        i.addEventListener("click",completeTask);
-        return i;
-    }
+  
+  
 
-    const  completeTask =(event)=>
-    {
-        console.log(event.target )
-        const elemento= event.target;
-        // si eexiste la clase la elimino si no la dejo
-        elemento.classList.toggle("fas");
-        elemento.classList.toggle("completeIcon");
-        elemento.classList.toggle("far");
-    }
-
-        
-    const deleteBtn = () =>
-    {
-        const i = document.createElement("i");
-        i.classList.add("fas","fa-trash-alt","trashIcon","icon");
-        i.addEventListener("click",deleteTask);
-        return i;
-    }
-
-    const deleteTask = (event) => 
-    {
-
-   const parent = event.target.parentElement;
-  parent.remove();
-    }
-
- })();
