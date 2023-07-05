@@ -8,6 +8,7 @@ const btnAdd = document.querySelector("[data-btn-add]");
 // se crea un metodo para ser mas organizados
 const createTask =(evento) => 
     {
+        //prevenir el funcionamiento por defecto que tiene un formulario evento
         evento.preventDefault();
         // capturamos el input y con value mostramos lo que tiene el input // se captura el ul el cual es el contenedor de la card
         const input = document.querySelector("[data-form-input]");
