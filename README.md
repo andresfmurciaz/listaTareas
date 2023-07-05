@@ -12,3 +12,5 @@ Agregar la clase CSS utilizando el método toggle
 Utilizar el atributo parentElement para subir un elemento en el árbol del DOM
 Encontrar el objetivo del evento utilizando la propiedad target
 Utilizar IIFE
+Utilizar import/export
+Remover elementos del DOM con el método remove
