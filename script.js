@@ -69,7 +69,7 @@ const createTask =(evento) =>
     {
 
    const parent = event.target.parentElement;
-console.log(parent);
+  parent.remove();
     }
 
  })();
