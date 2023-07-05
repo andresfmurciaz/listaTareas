@@ -65,11 +65,11 @@ const createTask =(evento) =>
         return i;
     }
 
-    const deleteTask = () => 
+    const deleteTask = (event) => 
     {
 
-    console.log("elinado")
-
+   const parent = event.target.parentElement;
+console.log(parent);
     }
 
  })();
